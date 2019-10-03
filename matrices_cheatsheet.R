@@ -32,8 +32,27 @@ diag(M) <- 1 # Set to 1 the diagonal of the matrix
 ########################################
 # 3. Useful functions for a matrix
 ########################################
+dim(M) # Returns the dimensions of the matrix
+nrow(M) # Returns the number of rows
+ncol(M) # Returns the number of columns
+Q <- t(N) # Transposes the matrix N into Q
+colSums(M) # Returns the sums of the columns
+rowSums(M) # Returns the sums of the rows
 
 
+########################################
+# 4. Operations with a scalar
+########################################
+3 * O # Product by a scalar (each component is multiplied by 3)
+Q - 4 # Subtraction of a scalar (each component is subtracted by 4)
 
 
-
+########################################
+# 5. Operations between matrices: R controls dimension adequacy!
+########################################
+M * N # Element-wise multiplication between M and N
+M %*% Q # Matrix product between M and Q
+M * Q # Invalid because dimensions are incompatible! (Element-wise product)
+M %*% N # Invalid because dimensions are incompatible! (Matrix product)
+rbind(M, N) # Vertical concatenation of matrices M and N
+cbind(M, N) # Horizontal concatenation of matrics M and N
